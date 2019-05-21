@@ -58,15 +58,11 @@ character(3) :: MMSymbols(60)
 !----------------------------------
 !      define operations
 !----------------------------------
-
+!where( system % atom % resid == "GUA" ) system % atom % rotate    = .true.
+system % atom(35:65) % translate = .true.
 !----------------------------------
 !      define resid's
 !----------------------------------
-
-system % atom(  1: 38) % resid = "DNR"
-system % atom( 39:112) % resid = "PER"
-system % atom(113:133) % resid = "ACP"
-system % atom(134:170) % resid = "CBZ"
 
 !----------------------------------
 !      define nresid's
