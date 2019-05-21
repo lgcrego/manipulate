@@ -45,8 +45,8 @@ do
     write(*,'(/a)') '6  : Build up crystal'
     write(*,'(/a)') '7  : Read trajectories '
     write(*,'(/a)') '8  : Read Multiple trajectories '
-    write(*,'(/a)') '9  : ad_hoc tuning '
-    write(*,'(/a)') 'A  : Read "Occupation.bin" file'
+    write(*,'(/a)') '9  : Read "Occupation.bin" file'
+    write(*,'(/a)') 'A  : ad_hoc tuning '
     write(*,'(/a)') '0  : DONE '
     write(*,'(/a)',advance='no') '>>>   '
     read (*,'(a)') Reading_Method
@@ -83,10 +83,10 @@ do
             CALL Work_Multiple_Trajectories
 
         case ('9')
-            CALL ad_hoc_tuning( structure )
+            CALL Post_proccess_Occupation
 
         case ('A','a')
-            CALL Post_proccess_Occupation
+            CALL ad_hoc_tuning( structure )
 
         case default
             exit
