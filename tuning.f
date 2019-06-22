@@ -41,7 +41,7 @@ character(3) :: MMSymbols(60)
 
  delta_t = 2.5d-4
 
- If( system%time == 0.d0 .AND. present(frame) ) system % time = delta_t * (frame -1)
+! If( system%time == 0.d0 .AND. present(frame) ) system % time = delta_t * (frame -1)
 
 !----------------------------------
 !      define SPECIAL atoms 
@@ -50,6 +50,9 @@ character(3) :: MMSymbols(60)
 !----------------------------------
 !      define MM atom types 
 !----------------------------------
+where(system % atom % resid == "TIP" .AND. system % atom %  MMSymbol == "H1" ) system % atom %  MMSymbol = "H"
+where(system % atom % resid == "TIP" .AND. system % atom %  MMSymbol == "H2" ) system % atom %  MMSymbol = "H"
+where(system % atom % resid == "TIP" .AND. system % atom %  MMSymbol == "OH2" ) system % atom %  MMSymbol = "O"
 
 !----------------------------------
 !      define fragment's
@@ -58,8 +61,7 @@ character(3) :: MMSymbols(60)
 !----------------------------------
 !      define operations
 !----------------------------------
-!where( system % atom % resid == "GUA" ) system % atom % rotate    = .true.
-system % atom(35:65) % translate = .true.
+
 !----------------------------------
 !      define resid's
 !----------------------------------
@@ -67,8 +69,6 @@ system % atom(35:65) % translate = .true.
 !----------------------------------
 !      define nresid's
 !----------------------------------
-
-!where( system % atom % resid == "CCC" ) system % atom % nresid = 2
 
 !----------------------------------
 !     Selective_Dynamics
