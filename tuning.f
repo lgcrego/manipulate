@@ -50,18 +50,16 @@ character(3) :: MMSymbols(60)
 !----------------------------------
 !      define MM atom types 
 !----------------------------------
-where(system % atom % resid == "TIP" .AND. system % atom %  MMSymbol == "H1" ) system % atom %  MMSymbol = "H"
-where(system % atom % resid == "TIP" .AND. system % atom %  MMSymbol == "H2" ) system % atom %  MMSymbol = "H"
-where(system % atom % resid == "TIP" .AND. system % atom %  MMSymbol == "OH2" ) system % atom %  MMSymbol = "O"
 
 !----------------------------------
 !      define fragment's
 !----------------------------------
 
 !----------------------------------
-!      define operations
+!      define operations: 
+! copy, delete, translate, rotate, group
 !----------------------------------
-
+where(system % atom % resid == "MOL") system % atom % copy = .true.
 !----------------------------------
 !      define resid's
 !----------------------------------
@@ -69,6 +67,8 @@ where(system % atom % resid == "TIP" .AND. system % atom %  MMSymbol == "OH2" ) 
 !----------------------------------
 !      define nresid's
 !----------------------------------
+
+!where(system % atom % Symbol /= "Si") system % atom %  nresid = 1
 
 !----------------------------------
 !     Selective_Dynamics

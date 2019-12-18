@@ -343,6 +343,8 @@ character(len=1)    :: element
             a(i)%Symbol = 'O' 
         case( 'YN' , 'NTr' , 'Nx' ) 
             a(i)%Symbol = 'N' 
+        case( 'SI' , 'Si' , 'si' ) 
+            a(i)%Symbol = 'Si' 
         case( 'Al' ) 
             a(i)%Symbol = 'Al' 
         case( 'Ti' , 'TI' ) 
