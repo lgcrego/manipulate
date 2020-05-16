@@ -54,12 +54,12 @@ copies = [( i , i = Old_N_of_atoms+1 , New_N_of_atoms )]
 CALL Translation( system , copies )
 
 ! input information ...
-write(*,'(2/a)',advance='no') "residue # of the reference (use zero (0) to keep nresid invariant) :  "
+write(*,'(2/a)',advance='no') "residue # of the copies :  "
 read(*,*) nresid
 
 ! finalize copy ...
-system % atom(copies) % fragment = "F"
-system % atom(copies) % nresid   = system % atom(copies) % nresid + nresid
+system % atom(copies) % fragment = "Z"
+system % atom(copies) % nresid   = nresid
 system % N_of_atoms              = New_N_of_atoms
 
 deallocate( copies )
