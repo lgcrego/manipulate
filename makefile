@@ -2,9 +2,9 @@
 
 SUFFIX=.f
 
-FC=/opt/intel/composer_xe_2015.1.133/bin/intel64/ifort
+FC=ifort
 SAFE = -g -traceback
-FFLAGS = -xhost -openmp -fpp -O3 -free $(SAFE)
+FFLAGS = -xhost -qopenmp -fpp -O3 -free $(SAFE)
 
 LIB    =  -liomp5
 INCS   = 
