@@ -28,6 +28,7 @@ SOURCE = types_m.o \
 		 elastic.o \
 		 correlation.o \
 		 stat.o \
+         RW_driver.o \
 		 trj.o \
 		 multiple_trj.o \
 		 occupation_bin.o \
