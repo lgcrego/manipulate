@@ -96,6 +96,12 @@ dkms.conf
 # Compiled Static libraries
 
 # Executables
+a
 
+### garbage ###
+*.agr
+*.png
+*.tga
+*.swp
 
 # End of https://www.gitignore.io/api/c,c++,cuda,fortran
