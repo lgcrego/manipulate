@@ -149,6 +149,8 @@ integer :: i
             a(i)%AtNo = 30 
         case( 'RU','Ru') 
             a(i)%AtNo = 44 
+        case( 'SN','Sn') 
+            a(i)%AtNo = 50 
         case( 'I') 
             a(i)%AtNo = 53 
         case( 'Cs','CS' ) 
@@ -215,6 +217,8 @@ integer :: i
             a(i)%Symbol = 'Zn'
         case( 44 ) 
             a(i)%Symbol = 'Ru'
+        case( 50 ) 
+            a(i)%Symbol = 'Sn'
         case( 53 ) 
             a(i)%Symbol = 'I'
         case( 55 ) 
@@ -367,6 +371,8 @@ character(len=1)    :: element
             a(i)%Symbol = 'C'  
         case( 'SS' ) 
             a(i)%Symbol = 'S'  
+        case( 'SN' , 'Sn' ) 
+            a(i)%Symbol = 'Sn'  
     end select
 
  END DO
