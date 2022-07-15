@@ -40,13 +40,9 @@ character :: option,             &
              calc_occ_pl,        &
              calc_occ_der_pl,    &
              calc_coherences_pl, &
-             calc_unif_grid,     &
              calc_occ_smear,     &
              calc_rho_abxdE_ab,  &
-
-             calc_rho_ab_smear,  &
-             calc_rho_int_dt,    &
-             calc_rho_int_dE
+             calc_rho_ab_smear
 
 logical :: done, need_grid(2)
 
@@ -235,7 +231,7 @@ if ( calc_occ_der_pl == 'X' ) then
     PRINT_INIT(" Derivative (per level): d(occ)/dt")
 
     dt = (t(n_t)-t(1))/n_t
-    write(*,'(a,f10.8)') "  dt=",    dt
+    write(*,'(a,f11.8)') "  dt=",    dt
 
     allocate( occ_der(Nwindow,n_part,n_t) )
 
